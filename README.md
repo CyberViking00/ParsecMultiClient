@@ -1,6 +1,9 @@
 # Parsec Multi Client
 
 A Lightweight windows application that allows you to run multiple instances of Parsec simultaneously.
+## Screenshot
+
+![Main Window](main.png)
 
 ## Features
 
