@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <!-- Zip the master folder before build, embed it, then clean up after -->
+  <Target Name="ZipMaster" BeforeTargets="BeforeBuild">
+    <Delete Files="$(ProjectDir)master.zip" Condition="Exists('$(ProjectDir)master.zip')" />
+    <ZipDirectory SourceDirectory="$(ProjectDir)master" DestinationFile="$(ProjectDir)master.zip" Overwrite="true" />
+  </Target>
+  <Target Name="CleanupZip" AfterTargets="Build">
+    <Delete Files="$(ProjectDir)master.zip" />
+  </Target>
+  <ItemGroup>
+    <Content Include="app.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="master.zip">
+      <LogicalName>master.zip</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
