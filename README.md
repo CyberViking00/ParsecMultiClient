@@ -1,6 +1,6 @@
 # Parsec Multi Client
 
-A Lightweight windows application that allows you to run multiple instances of # [Parsec](https://parsec.app) Multi Client simultaneously.
+A Lightweight windows application that allows you to run multiple instances of [Parsec](https://parsec.app) Multi Client simultaneously.
 ## Screenshot
 
 ![Main Window](main.png)
